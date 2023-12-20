@@ -18,7 +18,7 @@ const openaiApiKey = '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';
 const openaiEndpoint = 'https://api.openai.com/v1/chat/completions';
 
 const openai = new OpenAI({
-  apiKey: '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'
+  apiKey: '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'
 });
 
 // Refresh Bitable Access Token
