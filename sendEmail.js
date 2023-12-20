@@ -3,6 +3,8 @@ const bodyParser = require("body-parser");
 const axios = require("axios");
 const nodemailer = require("nodemailer");
 const OpenAI = require("openai");
+const dotenv = require('dotenv');
+dotenv.config();
 
 const app = express();
 app.use(bodyParser.json());
@@ -11,14 +13,10 @@ app.use(bodyParser.json());
 const baseId = "MG4DbQdS2akEMUsqMiilx0ikgac";
 const tableId = "tblnn7xqfGzRNljp";
 const apiUrl = `https://open.larksuite.com/open-apis/bitable/v1/apps/${baseId}/tables/${tableId}/records`;
-let accessToken = "u-fgbsUcIXV2rV7XzW08dZE4g41ipe01X3p00wlk6025kh";
-
-// OpenAI Configuration
-const openaiApiKey = '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';
-const openaiEndpoint = 'https://api.openai.com/v1/chat/completions';
+const accessToken = process.env.BITABLE_ACCESS_TOKEN;
 
 const openai = new OpenAI({
-  apiKey: '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'
+  apiKey: process.env.OPENAI_API_KEY
 });
 
 // Refresh Bitable Access Token
