@@ -114,7 +114,7 @@ async function sendEmail(customerInfo, emailContent) {
     service: 'gmail',
     auth: {
       user: '21521557@gm.uit.edu.vn',
-      pass: '1257573400',
+      pass: process.env.PASS,
     },
   });
 
